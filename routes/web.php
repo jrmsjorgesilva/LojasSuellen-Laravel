@@ -25,6 +25,10 @@ Route::get('/shop', 'Teste@shop');
 
 Route::get('/suitecred', 'Suitecred@index');
 
+// ECCOMERCE TEMPLATE ROUTES
+
+Route::get('/eccommerce', 'EccommerceTemplate@index');
+
 // Route::get('/home', function () {
 //     return view('home');
 // });
