@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// LOJAS SUELLEN ROUTES
+
 Route::get('/', 'Teste@index');
 
 Route::get('/form', 'Teste@form');
 
 Route::get('/shop', 'Teste@shop');
+
+// SUITECRED HOTSITE ROUTES
+
+Route::get('/suitecred', 'Suitecred@index');
 
 // Route::get('/home', function () {
 //     return view('home');
