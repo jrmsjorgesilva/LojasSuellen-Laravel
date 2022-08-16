@@ -27,7 +27,13 @@ Route::get('/suitecred', 'Suitecred@index');
 
 // ECCOMERCE TEMPLATE ROUTES
 
-Route::get('/eccommerce', 'EccommerceTemplate@index');
+Route::get('/ecommerce', 'EccommerceTemplate@index');
+
+Route::get('/detail', 'EccommerceTemplate@detail_page');
+
+Route::get('/contact', 'EccommerceTemplate@contact_page');
+
+Route::get('/checkout', 'EccommerceTemplate@checkout_page');
 
 // Route::get('/home', function () {
 //     return view('home');
