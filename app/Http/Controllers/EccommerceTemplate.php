@@ -13,7 +13,7 @@ class EccommerceTemplate extends Controller
      */
     public function index()
     {
-        return view('templates.eccommerce.index');
+        return view('templates.eccommerce.home');
     }
 
     /**
