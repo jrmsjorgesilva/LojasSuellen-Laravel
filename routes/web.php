@@ -39,6 +39,10 @@ Route::get('/cart', 'EccommerceTemplate@cart_page');
 
 Route::get('/shop', 'EccommerceTemplate@shop_page');
 
+// EVENT CONNECT ROUTES
+
+Route::get('/eventconnect', "EventConnect@index");
+
 // Route::get('/home', function () {
 //     return view('home');
 // });
