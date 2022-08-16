@@ -31,6 +31,16 @@ class EccommerceTemplate extends Controller
         return view('templates.ecommerce.checkout');
     }
 
+    public function cart_page()
+    {
+        return view('templates.ecommerce.cart');
+    }
+
+    public function shop_page()
+    {
+        return view('templates.ecommerce.shop');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

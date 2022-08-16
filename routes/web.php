@@ -35,6 +35,10 @@ Route::get('/contact', 'EccommerceTemplate@contact_page');
 
 Route::get('/checkout', 'EccommerceTemplate@checkout_page');
 
+Route::get('/cart', 'EccommerceTemplate@cart_page');
+
+Route::get('/shop', 'EccommerceTemplate@shop_page');
+
 // Route::get('/home', function () {
 //     return view('home');
 // });
