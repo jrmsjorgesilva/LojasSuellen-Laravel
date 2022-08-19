@@ -3,6 +3,16 @@
 @extends('templates.eventconnect.layouts.navbar')
 
 @section('content')
+    <section class="section-test">
+        <div class="container text-center">
+            @forelse ($events as $event)
+                <h1 class="title">Titulo: {{ $event->title }}</h1>
+                <p class="text-muted">Descrição: {{ $event->description }}</p>
+            @empty
+            @endforelse
+        </div>
+    </section>
+
     <div class="container">
         <h1>Events...</h1>
         @for ($i = 0; $i < 5; $i++)

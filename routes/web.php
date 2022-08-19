@@ -43,6 +43,12 @@ Route::get('/shop', 'EccommerceTemplate@shop_page');
 
 Route::get('/eventconnect', "EventConnect@index");
 
+Route::get('/eventconnect/create', "EventConnect@create");
+
+Route::get('/eventconnect/contact', "EventConnect@contact");
+
+Route::post('/eventconnect', "EventConnect@store");
+
 // Route::get('/home', function () {
 //     return view('home');
 // });

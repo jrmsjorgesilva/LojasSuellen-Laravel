@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Event;
+
 class EventConnect extends Controller
 {
     /**
@@ -13,7 +15,13 @@ class EventConnect extends Controller
      */
     public function index()
     {
-        return view('templates.eventconnect.home');
+        $events = Event::all();
+        return view('templates.eventconnect.home', ['events' => $events]);
+    }
+
+    public function contact()
+    {
+        return view('templates.eventconnect.contact');
     }
 
     /**
@@ -23,7 +31,7 @@ class EventConnect extends Controller
      */
     public function create()
     {
-        //
+        return view('templates.eventconnect.events.create');
     }
 
     /**
@@ -34,7 +42,16 @@ class EventConnect extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event;
+
+        $event->title = $request->title;
+        $event->city = $request->city;
+        $event->private = $request->private;
+        $event->description = $request->description;
+
+        $event->save();
+
+        return redirect('/eventconnect');
     }
 
     /**
