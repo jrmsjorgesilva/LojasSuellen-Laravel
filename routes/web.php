@@ -41,7 +41,7 @@ Route::get('/shop', 'EccommerceTemplate@shop_page');
 
 // EVENT CONNECT ROUTES
 
-Route::get('/eventconnect', "EventConnect@index");
+Route::get('/eventconnect', "EventConnect@index")->name('/eventconnect.index');
 
 Route::get('/eventconnect/create', "EventConnect@create");
 
@@ -52,4 +52,8 @@ Route::post('/eventconnect', "EventConnect@store");
 // Route::get('/home', function () {
 //     return view('home');
 // });
+
+// FINTORCH ROUTES
+
+Route::get('/fintorch', "FintorchController@index");
 
