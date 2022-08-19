@@ -49,9 +49,30 @@ class EventConnect extends Controller
         $event->private = $request->private;
         $event->description = $request->description;
 
+        // upload images
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $request_image = $request->image;
+
+            // pega extensão
+            $extension = $request_image->extension();
+
+            // cria hash para o nome da imagem
+            $image_name = md5(
+                $request_image->getClientOriginalName() . strtotime('now')
+            ) . "." . $extension;
+
+            // move a imagem para a pasta com nome de hash
+            $request->image->move(public_path('assets/img_eventconnect'), $image_name);
+
+            // salva no objeto que vai para o banco
+            $event->image = $image_name;
+
+        }
+
         $event->save();
 
-        return redirect('/eventconnect');
+        return redirect('/eventconnect')->with('msg', 'Evento Criado com Sucesso');
     }
 
     /**

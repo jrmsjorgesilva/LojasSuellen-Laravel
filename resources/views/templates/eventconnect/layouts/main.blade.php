@@ -14,7 +14,18 @@
 
     @yield('navbar')
 
-    @yield('content')
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if (session('msg'))
+                <div class="msg alert alert-success text-center position-fixed bottom-0" style="z-index: 999;">
+                    {{ session('msg') }}
+                </div>
+                @endif
+                @yield('content')
+            </div>
+        </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">

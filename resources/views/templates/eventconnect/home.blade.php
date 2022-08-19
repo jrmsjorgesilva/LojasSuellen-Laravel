@@ -17,9 +17,13 @@
         @forelse ($events as $event)
             <div class="blog-card">
                 <div class="meta">
-                    <div class="photo"
-                        style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)">
-                    </div>
+                    @if ($event->image)
+                        <div class="photo" style="background-image: url(/assets/img_eventconnect/{{ $event->image }}) ">
+                        </div>
+                    @else
+                        <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg) ">
+                        </div>
+                    @endif
                     <ul class="details">
                         <li class="author"><a href="#">John Doe</a></li>
                         <li class="date">{{ $event->created_at }}</li>

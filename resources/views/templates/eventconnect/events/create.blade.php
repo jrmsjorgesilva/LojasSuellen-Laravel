@@ -9,9 +9,16 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h1 class="text-center">Crie seu Evento</h1>
-                <form action="/eventconnect" method="POST">
+                <form action="/eventconnect" method="POST" enctype="multipart/form-data">
                     @csrf
                     <fieldset>
+                        <div class="form-group">
+                            <label for="title">
+                                Imagem de Capa do Evento:
+                            </label>
+                            <br />
+                            <input type="file" class="form-control my-2 p-5" id='image' name="image">
+                        </div>
                         <div class="form-group">
                             <label for="title">
                                 Evento:
